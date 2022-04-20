@@ -1,4 +1,8 @@
 .idea
 node_modules/
 lib
+
+# OS generated files #
+######################
 .DS_Store
+.DS_Store?
