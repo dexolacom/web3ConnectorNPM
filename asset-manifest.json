@@ -4,8 +4,8 @@
     "main.js.map": "/web3ConnectorNPM/static/js/main.5e7ad42b.chunk.js.map",
     "runtime-main.js": "/web3ConnectorNPM/static/js/runtime-main.bdfccab7.js",
     "runtime-main.js.map": "/web3ConnectorNPM/static/js/runtime-main.bdfccab7.js.map",
-    "static/js/2.c6c64de5.chunk.js": "/web3ConnectorNPM/static/js/2.c6c64de5.chunk.js",
-    "static/js/2.c6c64de5.chunk.js.map": "/web3ConnectorNPM/static/js/2.c6c64de5.chunk.js.map",
+    "static/js/2.f331e23a.chunk.js": "/web3ConnectorNPM/static/js/2.f331e23a.chunk.js",
+    "static/js/2.f331e23a.chunk.js.map": "/web3ConnectorNPM/static/js/2.f331e23a.chunk.js.map",
     "static/js/3.28525d69.chunk.js": "/web3ConnectorNPM/static/js/3.28525d69.chunk.js",
     "static/js/3.28525d69.chunk.js.map": "/web3ConnectorNPM/static/js/3.28525d69.chunk.js.map",
     "static/js/4.411a6c95.chunk.js": "/web3ConnectorNPM/static/js/4.411a6c95.chunk.js",
@@ -17,12 +17,12 @@
     "static/js/7.786aa31c.chunk.js": "/web3ConnectorNPM/static/js/7.786aa31c.chunk.js",
     "static/js/7.786aa31c.chunk.js.map": "/web3ConnectorNPM/static/js/7.786aa31c.chunk.js.map",
     "index.html": "/web3ConnectorNPM/index.html",
-    "static/js/2.c6c64de5.chunk.js.LICENSE.txt": "/web3ConnectorNPM/static/js/2.c6c64de5.chunk.js.LICENSE.txt",
+    "static/js/2.f331e23a.chunk.js.LICENSE.txt": "/web3ConnectorNPM/static/js/2.f331e23a.chunk.js.LICENSE.txt",
     "static/js/3.28525d69.chunk.js.LICENSE.txt": "/web3ConnectorNPM/static/js/3.28525d69.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.bdfccab7.js",
-    "static/js/2.c6c64de5.chunk.js",
+    "static/js/2.f331e23a.chunk.js",
     "static/js/main.5e7ad42b.chunk.js"
   ]
 }
