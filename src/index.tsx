@@ -1,3 +1,21 @@
-export { ConnectButton } from "./walletHooks/component/ButtonConnect/connectButton";
-export { setStyles } from "./walletHooks/utils";
-export { useSignMessage } from "./walletHooks/component/hooks/useSignMessage";
+import React from "react";
+import ReactDOM from "react-dom";
+import { Web3Provider } from "@ethersproject/providers";
+import { Web3ReactProvider } from "@web3-react/core";
+import App from "./App";
+
+
+function getLibrary(provider: any) {
+  const library = new Web3Provider(provider);
+  library.pollingInterval = 12000;
+  return library;
+}
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Web3ReactProvider getLibrary={getLibrary}>
+      <App />
+    </Web3ReactProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
