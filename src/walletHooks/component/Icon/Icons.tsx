@@ -207,8 +207,8 @@ export const LogOut = () => {
 export const CloseModal = () => {
   return (
     <svg
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       fill="#fff"
       viewBox="0 0 1024 1024"
       version="1.1"

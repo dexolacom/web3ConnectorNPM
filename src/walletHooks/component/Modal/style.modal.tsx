@@ -68,5 +68,6 @@ export const BtnClose = styled.button`
   height: 20px;
   background-color: transparent;
   color: #fff;
-  right: 13px;
+  right: 4px;
+  top: 1px;
 `;
