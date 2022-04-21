@@ -1,5 +1,9 @@
 import { useEffect } from "react";
-import { ConnectButton, setStyles, useSignMessage } from "tech-web3-connector";
+import {
+  ConnectButton,
+  setStyles,
+  useConnectors,
+} from "tech-web3-connector";
 
 const modalStyles = {
   modalBackdrop: {},
@@ -11,15 +15,20 @@ const modalStyles = {
   modalNameWallet: { color: "color" }, // example code
 };
 
-const App = () => {
-  setStyles(modalStyles);
-  // const { signMessage, isVerify } = useSignMessage();
+const rpcObj = {
+  88: "https://... you RPC_URL", // example code
 
-  // useEffect(() => {
-  //   if (!isVerify) {
-  //     signMessage("TEST");
-  //   }
-  // }, [isVerify]);
+};
+
+const App = () => {
+
+  setStyles(modalStyles);
+
+  const { setRpcObj } = useConnectors();
+
+  useEffect(() => {
+    setRpcObj({ ...rpcObj });
+  }, []);
 
   return (
     <>

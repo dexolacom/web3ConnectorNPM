@@ -12858,10 +12858,10 @@
     "mkdirp" "^1.0.3"
     "yallist" "^4.0.0"
 
-"tech-web3-connector@^1.2.2":
-  "integrity" "sha512-hZmG60nlDv0UAuvgcvWebSlEnoXol5Ln6FYfpCPYvfmZNZv9pV/LzcAoKXmsHU9bT/o6d5liyxkanVleNhzcGg=="
-  "resolved" "https://registry.npmjs.org/tech-web3-connector/-/tech-web3-connector-1.2.2.tgz"
-  "version" "1.2.2"
+"tech-web3-connector@^1.2.3":
+  "integrity" "sha512-K1f3eTWm4lFUfHTHyJQcv8UqdPpqekWCht+fZN+QpYQMBNJ13ED9piWBhBhzBE4aFzhnWY92W0AzeDtkZAqaJg=="
+  "resolved" "https://registry.npmjs.org/tech-web3-connector/-/tech-web3-connector-1.2.3.tgz"
+  "version" "1.2.3"
   dependencies:
     "@web3-react/core" "^6.1.9"
     "@web3-react/fortmatic-connector" "^6.1.6"
