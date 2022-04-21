@@ -1,6 +1,13 @@
 ## Connector for web3 wallets
 
-`yarn add tech-web3-connector` or `npm i tech-web3-connector`
+`npm i tech-web3-connector`
+
+## GitHub Pages
+
+`https://techbandorg.github.io/web3ConnectorNPM/`
+
+## Example Code
+`https://github.com/techbandorg/web3ConnectorNPM/tree/example-web3Connect`
 
 ### Usage
 
