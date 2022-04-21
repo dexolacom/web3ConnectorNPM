@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
-import { connectors } from "../../connectors";
+import { useConnectors } from "../hooks/useConnectors";
 import Web3 from "web3";
 
 export const useBtnConnect = () => {
   const { library, account, activate, deactivate, active } = useWeb3React();
+  const { connectors } = useConnectors();
 
   const [isOpen, setIsOpen] = useState(false);
   const [balance, setBalance] = useState("0.00");

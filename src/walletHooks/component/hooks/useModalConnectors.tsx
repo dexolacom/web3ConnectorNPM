@@ -1,6 +1,6 @@
 import React from "react";
 import { useWeb3React } from "@web3-react/core";
-import { connectors } from "../../connectors";
+import { useConnectors } from "../hooks/useConnectors";
 
 declare global {
   interface Window {
@@ -11,6 +11,7 @@ declare global {
 
 export const useModalConnectors = () => {
   const { activate } = useWeb3React();
+  const { connectors } = useConnectors();
 
   const setProvider = (type: string) => {
     if (type) {

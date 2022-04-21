@@ -7,16 +7,22 @@
 `https://techbandorg.github.io/web3ConnectorNPM/`
 
 ## Example Code
+
 `https://github.com/techbandorg/web3ConnectorNPM/tree/example-web3Connect`
 
 ### Usage
 
-`import { ConnectButton, setStyles , useSignMessage} from "tech-web3-connector"` - returns balance and address of user wallet , message signing function
+`import { ConnectButton, setStyles , useSignMessage , useConnectors} from "tech-web3-connector"` - returns balance and address of user wallet , message signing function
 
 For styling `ConnectButton` - for styling use style extension styled-components.
 
 `setStyles` - hook for classnames styling a ModalWallet
 `useSignMessage` - takes a string , returns boolean if the signature took place
+`useConnectors` - accepts a list extension object chaunID : Rpc-Url .
+
+### Default ChainIds
+
+`supportedChainIds: [1, 3, 4, 5, 42, 56, 97]`
 
 ### Supported Wallets
 
@@ -27,12 +33,12 @@ Fortmatic
 WalletConnect ( Trust , SafePal ...)
 ```
 
-### use case `setStyles` `ConnectButton` `useSignMessage`
+### use case `setStyles` `ConnectButton` `useSignMessage` `useConnectors`
 
 ```
 // App.jsx
 
-import { ConnectButton, setStyles , useSignMessage } from "tech-web3-connector";
+import { ConnectButton, setStyles , useSignMessage, useConnectors } from "tech-web3-connector";
 
 
 const modalStyles = {
@@ -45,16 +51,28 @@ const modalStyles = {
   modalNameWallet: {color: "color"}, // example code
 };
 
+const rpcObj = {
+    chainID<number>: "https:// ... ",
+    chainID<number>: "https:// ... ",
+    chainID<number>: "https:// ... ",
+     ...
+  };
 
 function App() {
- setStyles(modalStyles);
+
+  setStyles(modalStyles);
+
   const { signMessage, isVerify } = useSignMessage();
+  const { setRpcObj} = useConnectors();
 
   useEffect(() => {
+
     if (!isVerify) {
       signMessage("TEST");
     }
-    console.log("isVerify", isVerify);
+
+   setRpcObj({ ...rpcObj });
+
   }, [isVerify]);
 
   return (
