@@ -1,11 +1,8 @@
 import { useEffect } from "react";
-import {
-  ConnectButton,
-  setStyles,
-  useConnectors,
-} from "tech-web3-connector";
+import { ConnectButton, setStyles, useConnectors } from "tech-web3-connector";
 
-const modalStyles = {
+const customStyles = {
+  // styled modal
   modalBackdrop: {},
   modalContainer: {},
   modalBtnClose: {},
@@ -13,16 +10,21 @@ const modalStyles = {
   modalConnectorsItem: {},
   modalBtnProvider: {},
   modalNameWallet: { color: "color" }, // example code
+
+  // styled Button
+  BtnBase: {},
+  BtnContainer: {},
+  BtnAdress: {},
+  SpanBalance: {},
+  BtnLogout: {},
 };
 
 const rpcObj = {
   88: "https://... you RPC_URL", // example code
-
 };
 
 const App = () => {
-
-  setStyles(modalStyles);
+  setStyles(customStyles);
 
   const { setRpcObj } = useConnectors();
 
