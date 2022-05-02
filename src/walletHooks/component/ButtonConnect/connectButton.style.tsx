@@ -7,6 +7,8 @@ export const ButtonLogOut = styled.button`
   color: #fff;
 `;
 
+export const SpanBalance = styled.span``;
+
 export const Button = styled.button`
   cursor: pointer;
   width: 200px;

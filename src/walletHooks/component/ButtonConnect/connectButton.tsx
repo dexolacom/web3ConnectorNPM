@@ -27,6 +27,7 @@ import {
   Button,
   AccountDiv,
   WalletSpan,
+  SpanBalance,
 } from "./connectButton.style";
 
 export const ConnectButton = () => {
@@ -37,13 +38,17 @@ export const ConnectButton = () => {
   return (
     <>
       {!active ? (
-        <Button onClick={openModal}>Connect Wallet</Button>
+        <Button onClick={openModal} className="BtnBase">
+          Connect Wallet
+        </Button>
       ) : (
         <>
-          <AccountDiv>
-            <span>{convertToNormal(balance, 18, 4)}</span>
-            <WalletSpan>{shortAddress(account)}</WalletSpan>
-            <ButtonLogOut onClick={disconnect}>
+          <AccountDiv className="BtnContainer">
+            <SpanBalance>{convertToNormal(balance, 18, 4)}</SpanBalance>
+            <WalletSpan className="BtnAdress">
+              {shortAddress(account)}
+            </WalletSpan>
+            <ButtonLogOut onClick={disconnect} className="BtnLogout">
               <LogOut />
             </ButtonLogOut>
           </AccountDiv>
