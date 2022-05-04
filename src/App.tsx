@@ -17,6 +17,11 @@ const customStyles = {
   BtnAdress: {},
   SpanBalance: {},
   BtnLogout: {},
+
+  // hover Button 
+  "BtnBase:hover": {
+    "background-color": "color", // example code
+  },
 };
 
 const rpcObj = {
