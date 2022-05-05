@@ -9,9 +9,9 @@ declare global {
   }
 }
 
-export const useModalConnectors = () => {
+export const useModalConnectors = (RPC: object, portisId: string) => {
   const { activate } = useWeb3React();
-  const { connectors } = useConnectors();
+  const { connectors } = useConnectors(RPC, portisId);
 
   const setProvider = (type: string) => {
     if (type) {

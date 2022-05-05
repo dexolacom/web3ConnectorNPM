@@ -12,17 +12,13 @@
 
 ### Usage
 
-`import { ConnectButton, setStyles , useSignMessage , useConnectors} from "tech-web3-connector"` - returns balance and address of user wallet , message signing function
+`import { ConnectButton, setStyles , useSignMessage } from "tech-web3-connector"` - returns balance and address of user wallet , message signing function
 
 For styling `ConnectButton` - for styling use style extension styled-components.
 
 `setStyles` - hook for classnames styling a ModalWallet
 `useSignMessage` - takes a string , returns boolean if the signature took place
-`useConnectors` - accepts a list extension object chaunID : Rpc-Url .
 
-### Default ChainIds
-
-`supportedChainIds: [1, 3, 4, 5, 42, 56, 97]`
 
 ### Supported Wallets
 
@@ -33,12 +29,12 @@ Fortmatic
 WalletConnect ( Trust , SafePal ...)
 ```
 
-### use case `setStyles` `ConnectButton` `useSignMessage` `useConnectors`
+### use case `setStyles` `ConnectButton` `useSignMessage` 
 
 ```
 // App.jsx
 
-import { ConnectButton, setStyles , useSignMessage, useConnectors } from "tech-web3-connector";
+import { ConnectButton, setStyles , useSignMessage } from "tech-web3-connector";
 
 
 const customStyles = {
@@ -54,24 +50,34 @@ const customStyles = {
   // styled Button
   BtnBase:{},
   BtnContainer:{},
-  BtnAdress:{},
+  BtnAddress:{},
   SpanBalance{},
   BtnLogout:{},
+
+  // hover Button
+  "BtnBase:hover": {
+    "background-color": "color", // example code
+  },
 };
 
-const rpcObj = {
-    chainID<number>: "https:// ... ",
-    chainID<number>: "https:// ... ",
-    chainID<number>: "https:// ... ",
-     ...
-  };
+<!-- required  RPC -->
+
+const RPC = {
+  1: "https://mainnet.infura.io/v3/....",
+  3: "https://ropsten.infura.io/v3/....",
+  4: "https://rinkeby.infura.io/v3/....",
+  5: "https://goerly.infura.io/v3/....",
+  42: "https://kovan.infura.io/v3/....",
+  56: "https://bsc-dataseed.binance.org/",
+  97: "https://data-seed-prebsc-2-s3.binance.org:8545",
+  250: "https://rpc.ftm.tools",
+};
 
 function App() {
 
   setStyles(customStyles);
 
   const { signMessage, isVerify } = useSignMessage();
-  const { setRpcObj} = useConnectors();
 
   useEffect(() => {
 
@@ -85,7 +91,7 @@ function App() {
 
   return (
       <>
-         <ConnectButton />
+         <ConnectButton  RPC={RPC} portisId={"portisId-key-project"} />
       </>
   );
 }

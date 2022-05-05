@@ -30,10 +30,17 @@ import {
   SpanBalance,
 } from "./connectButton.style";
 
-export const ConnectButton = () => {
+export const ConnectButton = ({
+  RPC,
+  portisId,
+}: {
+  RPC: object;
+  portisId: string;
+}) => {
   const { active, balance, account, disconnect, openModal, isOpen } =
     useBtnConnect();
-  const { setProvider } = useModalConnectors();
+
+  const { setProvider } = useModalConnectors(RPC, portisId);
 
   return (
     <>
@@ -44,8 +51,10 @@ export const ConnectButton = () => {
       ) : (
         <>
           <AccountDiv className="BtnContainer">
-            <SpanBalance>{convertToNormal(balance, 18, 4)}</SpanBalance>
-            <WalletSpan className="BtnAdress">
+            <SpanBalance className="SpanBalance">
+              {convertToNormal(balance, 18, 4)}
+            </SpanBalance>
+            <WalletSpan className="BtnAddress">
               {shortAddress(account)}
             </WalletSpan>
             <ButtonLogOut onClick={disconnect} className="BtnLogout">
