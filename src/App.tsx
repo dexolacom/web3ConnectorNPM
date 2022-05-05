@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ConnectButton, setStyles, useConnectors } from "tech-web3-connector";
+import { ConnectButton, setStyles } from "tech-web3-connector";
 
 const customStyles = {
   // styled modal
@@ -18,28 +18,31 @@ const customStyles = {
   SpanBalance: {},
   BtnLogout: {},
 
-  // hover Button 
+  // hover Button
   "BtnBase:hover": {
     "background-color": "color", // example code
   },
 };
 
-const rpcObj = {
-  88: "https://... you RPC_URL", // example code
+// required  RPC
+
+const RPC = {
+  1: "https://mainnet.infura.io/v3/....",
+  3: "https://ropsten.infura.io/v3/....",
+  4: "https://rinkeby.infura.io/v3/....",
+  5: "https://goerly.infura.io/v3/....",
+  42: "https://kovan.infura.io/v3/....",
+  56: "https://bsc-dataseed.binance.org/",
+  97: "https://data-seed-prebsc-2-s3.binance.org:8545",
+  250: "https://rpc.ftm.tools",
 };
 
 const App = () => {
   setStyles(customStyles);
 
-  const { setRpcObj } = useConnectors();
-
-  useEffect(() => {
-    setRpcObj({ ...rpcObj });
-  }, []);
-
   return (
     <>
-      <ConnectButton />
+      <ConnectButton RPC={RPC} portisId={"portisId-key-project"} />
     </>
   );
 };
