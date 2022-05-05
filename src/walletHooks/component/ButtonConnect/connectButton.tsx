@@ -10,6 +10,7 @@ import {
   WalletConnect,
   LogOut,
   CloseModal,
+  Portis
 } from "../Icon/Icons";
 
 import {
@@ -116,6 +117,16 @@ export const ConnectButton = ({
                   <FortMatic />
 
                   <Span className="modalNameWallet"> Fortmatic</Span>
+                </BtnConnector>
+              </ConnectorsItem>
+              <ConnectorsItem className="modalConnectorsItem">
+                <BtnConnector
+                  onClick={() => setProvider("portis")}
+                  className="modalBtnProvider"
+                >
+                  <Portis />
+
+                  <Span className="modalNameWallet"> Portis</Span>
                 </BtnConnector>
               </ConnectorsItem>
             </Connectors>

@@ -34,6 +34,9 @@ export const useModalConnectors = (RPC: object, portisId: string) => {
       case "fortmatic":
         activate(connectors.fortmatic);
         break;
+      case "portis":
+        activate(connectors.portis);
+        break;
 
       default:
         break;
