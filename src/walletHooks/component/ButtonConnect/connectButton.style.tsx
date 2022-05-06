@@ -45,4 +45,5 @@ export const WalletSpan = styled.span`
   border-radius: 4px;
   padding: 10px;
   background-color: #252525;
+  cursor: pointer;
 `;

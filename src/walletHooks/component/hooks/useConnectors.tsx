@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {useWeb3React} from '@web3-react/core';
 import { InjectedConnector } from "@web3-react/injected-connector";
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
 import { WalletLinkConnector } from "@web3-react/walletlink-connector";
@@ -8,14 +9,21 @@ import { PortisConnector } from "@web3-react/portis-connector";
 export const useConnectors = (RPC?: object, portisId?: string) => {
   const [supportedChainIds, setSupportedChainIds] = useState<number[]>();
 
-  useEffect(() => {
-    if (RPC) {
-      const supportedChainId = Object.keys(RPC).map((string) => +string);
-      if (supportedChainId) {
-        setSupportedChainIds(supportedChainId);
-      }
+  const { chainId } = useWeb3React()
+
+  const getChainIds = (RPC:object) => {
+    const chainIds = Object.keys(RPC).map(string => +string)
+    setSupportedChainIds(chainIds)
+
+    if (chainId) {
+      if (chainIds.includes(chainId)) return
+      return console.error('Yours chain id is not supports')
     }
-  }, [RPC]);
+  };
+
+  useEffect(() => {
+    RPC && getChainIds(RPC)
+  }, [RPC, chainId]);
 
   const walletconnect = new WalletConnectConnector({
     //@ts-ignore

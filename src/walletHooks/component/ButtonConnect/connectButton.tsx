@@ -1,5 +1,5 @@
-import React from "react";
-import { shortAddress, convertToNormal } from "../../utils";
+import React, {useRef} from "react";
+import { shortAddress, convertToNormal, copyToClipBoard } from "../../utils";
 import { useBtnConnect } from "../hooks/useBtnConnect";
 import { useModalConnectors } from "../hooks/useModalConnectors";
 
@@ -31,17 +31,10 @@ import {
   SpanBalance,
 } from "./connectButton.style";
 
-export const ConnectButton = ({
-  RPC,
-  portisId,
-}: {
-  RPC: object;
-  portisId: string;
-}) => {
-  const { active, balance, account, disconnect, openModal, isOpen } =
-    useBtnConnect();
-
+export const ConnectButton = ({RPC, portisId}: { RPC: object, portisId: string}) => {
+  const { active, balance, account, disconnect, openModal, isOpen } = useBtnConnect();
   const { setProvider } = useModalConnectors(RPC, portisId);
+  const copyTextRef = useRef(null)
 
   return (
     <>
@@ -55,7 +48,7 @@ export const ConnectButton = ({
             <SpanBalance className="SpanBalance">
               {convertToNormal(balance, 18, 4)}
             </SpanBalance>
-            <WalletSpan className="BtnAddress">
+            <WalletSpan ref={copyTextRef} onClick={() => copyToClipBoard(copyTextRef)} className="BtnAddress">
               {shortAddress(account)}
             </WalletSpan>
             <ButtonLogOut onClick={disconnect} className="BtnLogout">

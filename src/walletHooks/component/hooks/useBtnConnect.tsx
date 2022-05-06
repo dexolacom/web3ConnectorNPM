@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
-import { useConnectors } from "../hooks/useConnectors";
+import { useConnectors } from "./useConnectors";
 import Web3 from "web3";
 
 export const useBtnConnect = () => {

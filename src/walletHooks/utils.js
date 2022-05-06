@@ -24,3 +24,11 @@ export const convertToNormal = (value, decimal, fixed) =>
   parseFloat(
     fixed ? (value / +`1E${decimal}`).toFixed(fixed) : value / +`1E${decimal}`
   );
+
+export const copyToClipBoard = async (copyTextRef) => {
+  try {
+    await navigator.clipboard.writeText(copyTextRef.current.innerHTML)
+  } catch (e) {
+    console.error('copying is failed')
+  }
+}
