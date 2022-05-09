@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import { shortAddress, convertToNormal, copyToClipBoard } from "../../utils";
 import { useBtnConnect } from "../hooks/useBtnConnect";
 import { useModalConnectors } from "../hooks/useModalConnectors";
@@ -35,6 +35,10 @@ export const ConnectButton = ({RPC, portisId}: { RPC: object, portisId: string})
   const { active, balance, account, disconnect, openModal, isOpen } = useBtnConnect();
   const { setProvider } = useModalConnectors(RPC, portisId);
   const copyTextRef = useRef(null)
+
+  useEffect(() => {
+    window.localStorage.clear()
+  }, [setProvider]);
 
   return (
     <>

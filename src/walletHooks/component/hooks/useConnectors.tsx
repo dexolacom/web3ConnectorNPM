@@ -56,17 +56,22 @@ export const useConnectors = (RPC?: object, portisId?: string) => {
     chainId: 1,
   });
 
-  const portis = new PortisConnector({
-    dAppId: portisId ?? "",
-    networks: [1, 100],
-  });
+  const getPortis = () => {
+    if (portisId) {
+      return new PortisConnector({
+        dAppId: portisId,
+        networks: [1, 100],
+      });
+    }
+    return
+  };
 
   const connectors: any = {
     injected: injected,
     walletconnect: walletconnect,
     coinbaseWallet: walletlink,
     fortmatic: fortmatic,
-    portis: portis,
+    portis: getPortis(),
   };
 
   return {
