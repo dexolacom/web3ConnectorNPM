@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, { useEffect, useRef } from "react";
 import { shortAddress, convertToNormal, copyToClipBoard } from "../../utils";
 import { useBtnConnect } from "../hooks/useBtnConnect";
 import { useModalConnectors } from "../hooks/useModalConnectors";
@@ -10,7 +10,7 @@ import {
   WalletConnect,
   LogOut,
   CloseModal,
-  Portis
+  Portis,
 } from "../Icon/Icons";
 
 import {
@@ -31,13 +31,54 @@ import {
   SpanBalance,
 } from "./connectButton.style";
 
-export const ConnectButton = ({RPC, portisId}: { RPC: object, portisId: string}) => {
-  const { active, balance, account, disconnect, openModal, isOpen } = useBtnConnect();
+const connectors = [
+  {
+    name: "metamask",
+    provider: "injected",
+    label: "MetaMask",
+    component: MetaMask,
+  },
+  {
+    name: "walletonnect",
+    provider: "walletonnect",
+    label: "WalletConnect",
+    component: WalletConnect,
+  },
+  {
+    name: "coinbase",
+    provider: "coinbaseWallet",
+    label: "Coinbase Wallet",
+    component: CoinBase,
+  },
+  {
+    name: "formatic",
+    provider: "fortmatic",
+    label: "Fortmatic",
+    component: FortMatic,
+  },
+  { name: "portis", provider: "portis", label: "Portis", component: Portis },
+];
+
+export const ConnectButton = ({
+  RPC,
+  portisId,
+}: {
+  RPC: object;
+  portisId: string;
+}) => {
+  const {
+    active,
+    balance,
+    account,
+    disconnect,
+    openModal,
+    isOpen,
+  } = useBtnConnect();
   const { setProvider } = useModalConnectors(RPC, portisId);
-  const copyTextRef = useRef(null)
+  const copyTextRef = useRef(null);
 
   useEffect(() => {
-    window.localStorage.clear()
+    window.localStorage.clear();
   }, [setProvider]);
 
   return (
@@ -52,7 +93,11 @@ export const ConnectButton = ({RPC, portisId}: { RPC: object, portisId: string})
             <SpanBalance className="SpanBalance">
               {convertToNormal(balance, 18, 4)}
             </SpanBalance>
-            <WalletSpan ref={copyTextRef} onClick={() => copyToClipBoard(copyTextRef)} className="BtnAddress">
+            <WalletSpan
+              ref={copyTextRef}
+              onClick={() => copyToClipBoard(copyTextRef)}
+              className="BtnAddress"
+            >
               {shortAddress(account)}
             </WalletSpan>
             <ButtonLogOut onClick={disconnect} className="BtnLogout">
@@ -72,60 +117,19 @@ export const ConnectButton = ({RPC, portisId}: { RPC: object, portisId: string})
               <CloseModal />
             </BtnClose>
             <Connectors className="modalConnectorsContainer">
-              {/* MetaMask */}
-              <ConnectorsItem className="modalConnectorsItem">
-                <BtnConnector
-                  onClick={() => setProvider("injected")}
-                  className="modalBtnProvider"
-                >
-                  <MetaMask />
-
-                  <Span className="modalNameWallet"> MetaMask</Span>
-                </BtnConnector>
-              </ConnectorsItem>
-              {/* WalletConnect */}
-              <ConnectorsItem className="modalConnectorsItem">
-                <BtnConnector
-                  onClick={() => setProvider("walletconnect")}
-                  className="modalBtnProvider"
-                >
-                  <WalletConnect />
-
-                  <Span className="modalNameWallet"> WalletConnect</Span>
-                </BtnConnector>
-              </ConnectorsItem>
-              {/* Coinbase Wallet */}
-              <ConnectorsItem className="modalConnectorsItem">
-                <BtnConnector
-                  onClick={() => setProvider("coinbaseWallet")}
-                  className="modalBtnProvider"
-                >
-                  <CoinBase />
-
-                  <Span className="modalNameWallet"> Coinbase Wallet</Span>
-                </BtnConnector>
-              </ConnectorsItem>
-              {/* Fortmatic */}
-              <ConnectorsItem className="modalConnectorsItem">
-                <BtnConnector
-                  onClick={() => setProvider("fortmatic")}
-                  className="modalBtnProvider"
-                >
-                  <FortMatic />
-
-                  <Span className="modalNameWallet"> Fortmatic</Span>
-                </BtnConnector>
-              </ConnectorsItem>
-              <ConnectorsItem className="modalConnectorsItem">
-                <BtnConnector
-                  onClick={() => setProvider("portis")}
-                  className="modalBtnProvider"
-                >
-                  <Portis />
-
-                  <Span className="modalNameWallet"> Portis</Span>
-                </BtnConnector>
-              </ConnectorsItem>
+              {connectors
+                .filter((connector) => connector.name) // somePropsWithSupportedConnectors.includes(connector.name)
+                .map((connector) => (
+                  <ConnectorsItem className="modalConnectorsItem">
+                    <BtnConnector
+                      onClick={() => setProvider(connector.provider)}
+                      className="modalBtnProvider"
+                    >
+                      {connector.component}
+                      <Span className="modalNameWallet">{connector.label}</Span>
+                    </BtnConnector>
+                  </ConnectorsItem>
+                ))}
             </Connectors>
           </Container>
         </ModalBackdrop>
