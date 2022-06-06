@@ -36,27 +36,27 @@ const connectors = [
     name: "metamask",
     provider: "injected",
     label: "MetaMask",
-    component: MetaMask,
+    icon: MetaMask,
   },
   {
     name: "walletonnect",
     provider: "walletonnect",
     label: "WalletConnect",
-    component: WalletConnect,
+    icon: WalletConnect,
   },
   {
     name: "coinbase",
     provider: "coinbaseWallet",
     label: "Coinbase Wallet",
-    component: CoinBase,
+    icon: CoinBase,
   },
   {
     name: "formatic",
     provider: "fortmatic",
     label: "Fortmatic",
-    component: FortMatic,
+    icon: FortMatic,
   },
-  { name: "portis", provider: "portis", label: "Portis", component: Portis },
+  { name: "portis", provider: "portis", label: "Portis", icon: Portis },
 ];
 
 export const ConnectButton = ({
@@ -125,7 +125,7 @@ export const ConnectButton = ({
                       onClick={() => setProvider(connector.provider)}
                       className="modalBtnProvider"
                     >
-                      {connector.component}
+                      <>{connector.icon}</>
                       <Span className="modalNameWallet">{connector.label}</Span>
                     </BtnConnector>
                   </ConnectorsItem>
