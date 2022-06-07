@@ -1,28 +1,31 @@
 {
   "files": {
-    "main.js": "/web3ConnectorNPM/static/js/main.5e7ad42b.chunk.js",
-    "main.js.map": "/web3ConnectorNPM/static/js/main.5e7ad42b.chunk.js.map",
-    "runtime-main.js": "/web3ConnectorNPM/static/js/runtime-main.bdfccab7.js",
-    "runtime-main.js.map": "/web3ConnectorNPM/static/js/runtime-main.bdfccab7.js.map",
-    "static/js/2.f331e23a.chunk.js": "/web3ConnectorNPM/static/js/2.f331e23a.chunk.js",
-    "static/js/2.f331e23a.chunk.js.map": "/web3ConnectorNPM/static/js/2.f331e23a.chunk.js.map",
-    "static/js/3.28525d69.chunk.js": "/web3ConnectorNPM/static/js/3.28525d69.chunk.js",
-    "static/js/3.28525d69.chunk.js.map": "/web3ConnectorNPM/static/js/3.28525d69.chunk.js.map",
-    "static/js/4.411a6c95.chunk.js": "/web3ConnectorNPM/static/js/4.411a6c95.chunk.js",
-    "static/js/4.411a6c95.chunk.js.map": "/web3ConnectorNPM/static/js/4.411a6c95.chunk.js.map",
-    "static/js/5.b27cff33.chunk.js": "/web3ConnectorNPM/static/js/5.b27cff33.chunk.js",
-    "static/js/5.b27cff33.chunk.js.map": "/web3ConnectorNPM/static/js/5.b27cff33.chunk.js.map",
-    "static/js/6.14fac986.chunk.js": "/web3ConnectorNPM/static/js/6.14fac986.chunk.js",
-    "static/js/6.14fac986.chunk.js.map": "/web3ConnectorNPM/static/js/6.14fac986.chunk.js.map",
-    "static/js/7.786aa31c.chunk.js": "/web3ConnectorNPM/static/js/7.786aa31c.chunk.js",
-    "static/js/7.786aa31c.chunk.js.map": "/web3ConnectorNPM/static/js/7.786aa31c.chunk.js.map",
+    "main.js": "/web3ConnectorNPM/static/js/main.8988d2a3.chunk.js",
+    "main.js.map": "/web3ConnectorNPM/static/js/main.8988d2a3.chunk.js.map",
+    "runtime-main.js": "/web3ConnectorNPM/static/js/runtime-main.5b74ff28.js",
+    "runtime-main.js.map": "/web3ConnectorNPM/static/js/runtime-main.5b74ff28.js.map",
+    "static/js/2.3e618a50.chunk.js": "/web3ConnectorNPM/static/js/2.3e618a50.chunk.js",
+    "static/js/2.3e618a50.chunk.js.map": "/web3ConnectorNPM/static/js/2.3e618a50.chunk.js.map",
+    "static/js/3.43cbb4bb.chunk.js": "/web3ConnectorNPM/static/js/3.43cbb4bb.chunk.js",
+    "static/js/3.43cbb4bb.chunk.js.map": "/web3ConnectorNPM/static/js/3.43cbb4bb.chunk.js.map",
+    "static/js/4.d2d88238.chunk.js": "/web3ConnectorNPM/static/js/4.d2d88238.chunk.js",
+    "static/js/4.d2d88238.chunk.js.map": "/web3ConnectorNPM/static/js/4.d2d88238.chunk.js.map",
+    "static/js/5.17090e29.chunk.js": "/web3ConnectorNPM/static/js/5.17090e29.chunk.js",
+    "static/js/5.17090e29.chunk.js.map": "/web3ConnectorNPM/static/js/5.17090e29.chunk.js.map",
+    "static/js/6.904cf396.chunk.js": "/web3ConnectorNPM/static/js/6.904cf396.chunk.js",
+    "static/js/6.904cf396.chunk.js.map": "/web3ConnectorNPM/static/js/6.904cf396.chunk.js.map",
+    "static/js/7.d16e03f6.chunk.js": "/web3ConnectorNPM/static/js/7.d16e03f6.chunk.js",
+    "static/js/7.d16e03f6.chunk.js.map": "/web3ConnectorNPM/static/js/7.d16e03f6.chunk.js.map",
+    "static/js/8.c2167cf3.chunk.js": "/web3ConnectorNPM/static/js/8.c2167cf3.chunk.js",
+    "static/js/8.c2167cf3.chunk.js.map": "/web3ConnectorNPM/static/js/8.c2167cf3.chunk.js.map",
     "index.html": "/web3ConnectorNPM/index.html",
-    "static/js/2.f331e23a.chunk.js.LICENSE.txt": "/web3ConnectorNPM/static/js/2.f331e23a.chunk.js.LICENSE.txt",
-    "static/js/3.28525d69.chunk.js.LICENSE.txt": "/web3ConnectorNPM/static/js/3.28525d69.chunk.js.LICENSE.txt"
+    "static/js/2.3e618a50.chunk.js.LICENSE.txt": "/web3ConnectorNPM/static/js/2.3e618a50.chunk.js.LICENSE.txt",
+    "static/js/3.43cbb4bb.chunk.js.LICENSE.txt": "/web3ConnectorNPM/static/js/3.43cbb4bb.chunk.js.LICENSE.txt",
+    "static/js/5.17090e29.chunk.js.LICENSE.txt": "/web3ConnectorNPM/static/js/5.17090e29.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.bdfccab7.js",
-    "static/js/2.f331e23a.chunk.js",
-    "static/js/main.5e7ad42b.chunk.js"
+    "static/js/runtime-main.5b74ff28.js",
+    "static/js/2.3e618a50.chunk.js",
+    "static/js/main.8988d2a3.chunk.js"
   ]
 }
