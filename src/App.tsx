@@ -35,14 +35,27 @@ const RPC = {
   56: "https://bsc-dataseed.binance.org/",
   97: "https://data-seed-prebsc-2-s3.binance.org:8545",
   250: "https://rpc.ftm.tools",
+  4002: "https://rpc.testnet.fantom.network",
 };
+// all supported connectors
+const supportedConnectors = [
+  "metamask",
+  "walletonnect",
+  "coinbase",
+  "formatic",
+  "portis",
+];
 
 const App = () => {
   setStyles(customStyles);
 
   return (
     <>
-      <ConnectButton RPC={RPC} portisId={"portisId-key-project"} />
+      <ConnectButton
+        RPC={RPC}
+        portisId={"portisId-key-project"}
+        supportedConnectors={supportedConnectors}
+      />
     </>
   );
 };
