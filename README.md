@@ -19,17 +19,17 @@ For styling `ConnectButton` - for styling use style extension styled-components.
 `setStyles` - hook for classnames styling a ModalWallet
 `useSignMessage` - takes a string , returns boolean if the signature took place
 
-
 ### Supported Wallets
 
 ```
 MetaMask
 CoinBase
 Fortmatic
+Portis
 WalletConnect ( Trust , SafePal ...)
 ```
 
-### use case `setStyles` `ConnectButton` `useSignMessage` 
+### use case `setStyles` `ConnectButton` `useSignMessage`
 
 ```
 // App.jsx
@@ -73,6 +73,15 @@ const RPC = {
   250: "https://rpc.ftm.tools",
 };
 
+const supportedConnectors =
+[
+    "metamask",
+    "walletonnect",
+    "coinbase",
+    "formatic",
+    "portis",
+]
+
 function App() {
 
   setStyles(customStyles);
@@ -91,7 +100,7 @@ function App() {
 
   return (
       <>
-         <ConnectButton  RPC={RPC} portisId={"portisId-key-project"} />
+         <ConnectButton  RPC={RPC} portisId={"portisId-key-project"} supportedConnectors={supportedConnectors}/>
       </>
   );
 }
