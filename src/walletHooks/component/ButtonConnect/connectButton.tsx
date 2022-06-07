@@ -36,44 +36,46 @@ const connectors = [
     name: "metamask",
     provider: "injected",
     label: "MetaMask",
-    icon: MetaMask,
+    icon: <MetaMask />,
   },
   {
     name: "walletonnect",
     provider: "walletonnect",
     label: "WalletConnect",
-    icon: WalletConnect,
+    icon: <WalletConnect />,
   },
   {
     name: "coinbase",
     provider: "coinbaseWallet",
     label: "Coinbase Wallet",
-    icon: CoinBase,
+    icon: <CoinBase />,
   },
   {
     name: "formatic",
     provider: "fortmatic",
     label: "Fortmatic",
-    icon: FortMatic,
+    icon: <FortMatic />,
   },
-  { name: "portis", provider: "portis", label: "Portis", icon: Portis },
+  { name: "portis", provider: "portis", label: "Portis", icon: <Portis /> },
 ];
 
 export const ConnectButton = ({
   RPC,
   portisId,
+  supportedConnectors = [
+    "metamask",
+    "walletonnect",
+    "coinbase",
+    "formatic",
+    "portis",
+  ],
 }: {
   RPC: object;
   portisId: string;
+  supportedConnectors?: Array<string>;
 }) => {
-  const {
-    active,
-    balance,
-    account,
-    disconnect,
-    openModal,
-    isOpen,
-  } = useBtnConnect();
+  const { active, balance, account, disconnect, openModal, isOpen } =
+    useBtnConnect();
   const { setProvider } = useModalConnectors(RPC, portisId);
   const copyTextRef = useRef(null);
 
@@ -118,14 +120,16 @@ export const ConnectButton = ({
             </BtnClose>
             <Connectors className="modalConnectorsContainer">
               {connectors
-                .filter((connector) => connector.name) // somePropsWithSupportedConnectors.includes(connector.name)
+                .filter((connector) =>
+                  supportedConnectors?.includes(connector.name)
+                )
                 .map((connector) => (
                   <ConnectorsItem className="modalConnectorsItem">
                     <BtnConnector
                       onClick={() => setProvider(connector.provider)}
                       className="modalBtnProvider"
                     >
-                      <>{connector.icon}</>
+                      {connector.icon}
                       <Span className="modalNameWallet">{connector.label}</Span>
                     </BtnConnector>
                   </ConnectorsItem>
