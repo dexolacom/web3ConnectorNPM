@@ -80,7 +80,7 @@ export const ConnectButton = ({
   const copyTextRef = useRef(null);
 
   useEffect(() => {
-    window.localStorage.clear();
+    // window.localStorage.clear();
   }, [setProvider]);
 
   return (
@@ -124,7 +124,10 @@ export const ConnectButton = ({
                   supportedConnectors?.includes(connector.name)
                 )
                 .map((connector) => (
-                  <ConnectorsItem className="modalConnectorsItem">
+                  <ConnectorsItem
+                    className="modalConnectorsItem"
+                    key={connector.name}
+                  >
                     <BtnConnector
                       onClick={() => setProvider(connector.provider)}
                       className="modalBtnProvider"
