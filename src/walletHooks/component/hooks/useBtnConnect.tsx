@@ -30,7 +30,8 @@ export const useBtnConnect = () => {
   const disconnect = () => {
     refreshState();
     deactivate();
-    localStorage.clear();
+    // localStorage.clear();
+    window.localStorage.clear();
   };
 
   useEffect(() => {
